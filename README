@@ -38,3 +38,166 @@ sb-yomiuri.el
 http://www.yomiuri.co.jp/
 
 shimbun.el
+
+sb-cri.el
+http://japanese.cri.cn/
+
+sb-epoch.el
+http://www.epochtimes.jp/
+
+sb-taiwantoday.el
+sb-taiwantoday2.el
+http://taiwantoday.tw/mp.asp?mp=1001
+
+sb-ryukyu.el
+http://ryukyushimpo.jp/
+
+for .mew.el
+(setq mew-shimbun-folder-groups
+      '(
+ 	("yahoo"
+ 	 ("yahoo.international" . all)
+  	 ("yahoo.topnews" . all)
+  	 ("yahoo.news" . all)
+  	 ("yahoo.politics" . all)
+  	 ("yahoo.business-all" . all)
+  	 ("yahoo.society" . all)
+ 	 )
+	("asahi"
+ 	 ("asahi.international" . 2)
+;	 ("asahi.international.jinmin" . 2)
+	 ("asahi.international.asia" . 2)
+	 ("asahi.international.column" . 2)
+	 ("asahi.international.special" . 2)
+	 ("asahi.international.world" . 2)
+ 	 ("asahi.politics" . 2)
+;	 ("asahi.business" . 2)
+	 ("asahi.editorial". 2)
+; 	 ("asahi.national" . 2)
+	 )
+	("yomiuri"
+  	 ("yomiuri.world". 1)
+	 ("yomiuri.politics" . 2)
+ 	 ("yomiuri.atmoney" . 2)
+;  	 ("yomiuri.national" . 2)
+	 ("yomiuri.editorial" . 2)
+	 )
+	("mainichi"
+	 ("mainichi.flash" . all)
+	 ("mainichi.opinion.editorial" . all)
+	 ("mainichi.opinion.eye" . all)
+	 )
+	("sankei"
+ 	 ("sankei.world" . all)
+	 ("sankei.usatoday.ja" . all)
+ 	 ("sankei.points" . all)
+ 	 ("sankei.politics" . all)
+ 	 ("sankei.economy" . all)
+	 )
+	("cnn-jp"
+	 ("cnn-jp.world" . 1)
+	 ("cnn-jp.usa" . 1)
+	 ("cnn-jp.business" . 1)
+; 	 ("cnn-jp.sports" . 1)
+;; 	 ("cnn-jp.science" . 1)
+	 ("cnn-jp.showbiz" . 1)
+; 	 ("cnn-jp.fringe" . 1)
+	 )
+	("chosun"
+	 ("chosun.international" . all)
+	 ("chosun.politics" . all)
+	 ("chosun.society" . all)
+	 ("chosun.economy" . all)
+; 	 ("chosun.sports" . 1)
+;; 	 ("chosun.culture" . all)
+;; 	 ("chosun.editorial" . all)
+	 )
+	("ruvr"
+	 ("ruvr.world" . all)
+	 ("ruvr.politics" . all)
+	 ("ruvr.russia_japan" . all)
+	 ("ruvr.russia" . all)
+	 ("ruvr.economy" . all)
+	 ("ruvr.society" . all)
+	 )
+	("irib"
+	 ("irib.news" . all)
+	 )
+	("kabu"
+	 ("yahoo.stock" . 5)
+	 ("yahoo.market" . 5)
+	 ("reuters-rss.news" . all)
+	 )
+	("hatena"
+	 ("hatena.blog" . last)
+	 )
+	("tufs"
+	 ("tufs.isram" . 1)
+	 )
+	("tanakanews"
+	 ("tanakanews.news" . last)
+	 )
+	("aljazeera"
+	 ("aljazeera.news" . last)
+	 ("aljazeera.africa" . last)
+	 ("aljazeera.america" . last)
+	 ("aljazeera.asia-pacific" . last)
+	 ("aljazeera.central-asia" . last)
+	 ("aljazeera.europe" . last)
+	 ("aljazeera.middle-east" . last)
+	 ("aljazeera.focus" . last)
+	 ("aljazeera.business" . last)
+	 )
+	("cri"
+	 ("cri.news" . last)
+ 	 ("cri.economy" . last)
+ 	 ("cri.travel" . last)
+ 	 ("cri.ent" . last)
+ 	 ("cri.china" . last)
+ 	 ("cri.special" . last)
+	 )
+	("epoch"
+	 ("epoch.hodo" . last)
+ 	 ("epoch.hyoron" . last)
+  	 ("epoch.economic" . last)
+  	 ("epoch.china" . last)
+  	 ("epoch.culture" . last)
+  	 ("epoch.science" . last)
+	 )
+	("taiwantoday"
+ 	 ("taiwantoday.politics" . last)
+	 ("taiwantoday2.politics" . last)
+  	 ("taiwantoday.diplomacy" . last)
+  	 ("taiwantoday2.diplomacy" . last)
+   	 ("taiwantoday.economics" . last)
+   	 ("taiwantoday2.economics" . last)
+   	 ("taiwantoday.culture" . last)
+   	 ("taiwantoday2.culture" . last)
+   	 ("taiwantoday.sightseeing" . last)
+   	 ("taiwantoday2.sightseeing" . last)
+	 ("taiwantoday.opinion" . last)
+	 ("taiwantoday2.opinion" . last)
+	 ("taiwantoday.critical" . last)
+         ("taiwantoday2.critical" . last)
+	 ("taiwantoday.politics2" . last)
+	 ("taiwantoday2.politics2" . last)
+;;   	 ("taiwantoday.diplomacy2" . last)  ;; doesn't work
+;;   	 ("taiwantoday2.diplomacy2" . last) ;; doesn't work
+   	 ("taiwantoday.economics2" . last)
+   	 ("taiwantoday2.economics2" . last)
+   	 ("taiwantoday.culture2" . last)
+   	 ("taiwantoday2.culture2" . last)
+   	 ("taiwantoday.sightseeing2" . last)
+   	 ("taiwantoday2.sightseeing2" . last)
+	 )
+	("ryukyu"
+	 ("ryukyu.society" . last)
+  	 ("ryukyu.politics" . last)
+   	 ("ryukyu.economy" . last)
+   	 ("ryukyu.region" . last)
+   	 ("ryukyu.education" . last)
+   	 ("ryukyu.ent" . last)
+   	 ("ryukyu.editorial" . last)
+   	 ("ryukyu.column" . last)
+	 )
+	))
