@@ -75,7 +75,7 @@
 
 (defvar shimbun-hatena-content-start "<div class=\"section\">[\t\n ]")
 
-(defvar shimbun-hatena-content-end  "</div>")
+(defvar shimbun-hatena-content-end  "<p class=\"sectionfooter\">")
 
 (defvar shimbun-hatena-x-face-alist nil)
 
