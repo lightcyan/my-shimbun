@@ -112,7 +112,7 @@
 		    "\\([^<）]+\\)")
 		   1 2 3 4 5 6 9 7 8)))
     `(("topnews" "トップ" "topnews" ,@topnews)
-      ("news" "ニュース" news ,@default)
+      ("news" "ニュース" "news" ,@default)
       ("politics" "政治" "pol" ,@default)
       ("society" "社会" "soci" ,@default)
       ("people" "人" "peo" ,@default)
