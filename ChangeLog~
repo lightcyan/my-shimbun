@@ -1,0 +1,3 @@
+2012-12-10  lightcyan  <lightcyan.area51@gmail.com>
+
+	* my-shimbun/sb-yahoo.el (shimbun-yahoo-groups-table): fix typo
