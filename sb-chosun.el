@@ -57,7 +57,7 @@
 	    ;; 4. serial number
 	    "\\([0-9]+\\)\\.html\\)\"[\t\n ]*>"
 	    ;; 5. subject
-	    "\\(.*\\cj.*\\)" "[\t\n ]*<[\t\n ]*/a[\t\n ]*>"
+	    "\\([^<].*\\cj.*\\)" "[\t\n ]*<[\t\n ]*/a[\t\n ]*>"
 	    )
 	    1 4 5 2 3 nil)))
     `(("international" "国際面" "" ,@default)
