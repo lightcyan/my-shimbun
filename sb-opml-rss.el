@@ -172,7 +172,7 @@ nil means set automatically when sb-opml-rss is loaded.")
 
 (luna-define-method shimbun-rss-build-message-id
   ((shimbun shimbun-opml-rss) url date)
-  (unless (string-match "http://\\(.+\\)" url)
+  (unless (string-match "https?://\\(.+\\)" url)
     (error "Cannot find message-id base"))
   (concat (match-string-no-properties 1 url) ""))
 
