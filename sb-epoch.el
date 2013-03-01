@@ -109,7 +109,7 @@ Ex;xlc)9`]D07rPEsbgyjP@\"_@g-kw!~TJNilrSC!<D|<m=%Uf2:eebg")))
 
 (luna-define-method initialize-instance :after ((shimbun shimbun-epoch)
 						 &rest init-args)
-  (shimbun-set-server-name-internal shimbun "epoch")
+  (shimbun-set-server-name-internal shimbun "大紀元")
   (shimbun-set-from-address-internal shimbun "nobody@example.com")
   ;; To share class variables between `shimbun-epoch' and its
   ;; successor `shimbun-epoch-html'.
