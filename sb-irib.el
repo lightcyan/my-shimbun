@@ -66,7 +66,7 @@
 	     s0 "<!-- Item title -->\n"
 	     s0 "<h3 class=\"catItemTitle\">\n"
 	     ;; 5 url[1]
-	     s0 "\n" s0 "<a href=\"\\(/news/[^/]+/[^/]+/"
+	     s0 "\n" s0 "<a href=\"\\(/news/[^/]+/\\(?:[^/]+/\\)?"
 	     ;; 6 serial number
 	     "\\([0-9]+\\)\\)"
 	     "[^>]+\">"
