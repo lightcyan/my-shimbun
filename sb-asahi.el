@@ -57,9 +57,9 @@ Every `.' in NAME will be replaced with `/'."
 	      (no-nl "[^\n<>]+"))
 	  (concat "<a" s1 "href=\"/"
 		  ;; 1. url
-		  "\\(" (shimbun-subst-char-in-string ?. ?/ name) "/"
+		  "\\(" (shimbun-subst-char-in-string ?. ?/ "name") "/[a-z]+/\\(?:[0-9]+/\\)?"
 		  ;; 2. serial number
-		  "\\([a-z]*"
+		  "\\([A-Z]*"
 		  ;; 3. year
 		  "\\(20[0-9][0-9]\\)"
 		  ;; 4. month
@@ -71,8 +71,8 @@ Every `.' in NAME will be replaced with `/'."
 		  "\">" s0
 		  ;; 6. subject
 		  "\\(" no-nl "\\)"
-		  s0 "\\(?:<!--dif[0-9]+-->\\)?"
-		  s0 "\\(?:<img" s1 "[^>]+>\\)?"
+		  s0 "\\(?:<span class=\"Time\">(\\([01]?[0-9]/[0-3]?[0-9]\\|[0-2]?[0-9]:[0-5]?[0-9]\\)\)</span>\\)?"
+		  s0 "\\(?:<span class=\"Charge\"><img" s1 "[^>]+></span>\\)?"
 		  s0 "\\(?:<!--dif[0-9]+-->\\)?" s0 "</a>"))
 	1 nil 2 6 3 4 5))
 
@@ -234,11 +234,11 @@ Every `.' in NAME will be replaced with `/'."
       ("housing" "住まい" "%s/news/"
        ,@(shimbun-asahi-make-regexp "housing.news"))
       ("igo" "囲碁" "%s/news/" ,@(shimbun-asahi-make-regexp "igo.news"))
-      ("international" "国際" "%s/list2.html" ,@default)
-      ("international.asia" "アジア" "international/asia.html" ,@default)
-      ("international.column" "コラム")
-      ("international.special" "特集")
-      ("international.world" "世界")
+      ("international" "国際" "%s/" ,@default)
+;;       ("international.asia" "アジア" "international/asia.html" ,@default)
+;;       ("international.column" "コラム")
+;;       ("international.special" "特集")
+;;       ("international.world" "世界")
       ("job" "就職・転職" "%s/news/"
        ,@(shimbun-asahi-make-regexp "job.news"))
       ("kansai" "関西" "%s/news/" ,@(shimbun-asahi-make-regexp "kansai.news"))
@@ -250,7 +250,7 @@ Every `.' in NAME will be replaced with `/'."
       ("life" "暮らし" "%s/list.html" ,@default)
       ("life.column" "コラム")
       ("national" "社会" "%s/list.html" ,@default)
-      ("politics" "政治" "%s/list.html" ,@default)
+      ("politics" "政治" "%s" ,@default)
       ("rss" "RSS" "http://www3.asahi.com/rss/index.rdf" ,@rss)
       ("science" "サイエンス" "%s/list.html" ,@default)
       ("shopping" "ショッピング" "%s/news/"
