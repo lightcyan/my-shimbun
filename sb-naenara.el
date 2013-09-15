@@ -57,14 +57,14 @@
  	     ;; 2. month
  	     "/\\([01]?[0-9]\\)"
  	     ;; 3. day
- 	     "/\\([0-3]?[0-9]\\)\\]"
+ 	     "/\\([0-3]?[0-9]\\)\\]</FONT>"
 	     ;; TAG & other
 	     "\\(?:<[^A][^>]*>\\|&nbsp;\\|[ 　	]\\)*"
 	     "<A" s1 "href" s0 "=" s0 "['\"]"
 	     ;; 4. URL
 	     "\\([^'\"]+\\)['\"]>"
 	     ;; 5. subject
-	     "\\(</?FONT[^>]*>\\)</A>")
+	     "\\([^<]+\\)</A>")
 	    4 2 4 1 5 2 3)))
   `(("news" "重要ニュース" "ja/news/" ,@default))) ;; 最近の重要ニュース
   "Alist of group names, their Japanese translations, index pages,
