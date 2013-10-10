@@ -38,7 +38,7 @@
 (luna-define-class shimbun-naenara
 		   (shimbun-japanese-newspaper shimbun-text) ())
 
-(defvar shimbun-naenara-top-level-domain "naenara.com.kp"
+(defvar shimbun-naenara-top-level-domain "www.naenara.com.kp"
   "Name of the top level domain for the naenara On-line.")
 
 (defvar shimbun-naenara-url
@@ -87,16 +87,16 @@ of [0]url, [1,2]serial numbers, [3]year, [4]subject, [5]month, [6]day,
 ;;  	     ;; 2. month
 ;;  	     "/\\([01]?[0-9]\\)"
 ;;  	     ;; 3. day
-;;  	     "/\\([0-3]?[0-9]\\)\\]"
+;;  	     "/\\([0-3]?[0-9]\\)\\]</FONT>"
 ;; 	     ;; TAG & other
 ;; 	     "\\(?:<[^A][^>]*>\\|&nbsp;\\|[ 　	]\\)*"
 ;; 	     "<A" s1 "href" s0 "=" s0 "['\"]"
 ;; 	     ;; 4. URL
 ;; 	     "\\([^'\"]+\\)['\"]>"
 ;; 	     ;; 5. subject
-;; 	     "\\(</?FONT[^>]*>\\|[^<]+\\)+</A>")
+;; 	     "\\([^<]+\\)</A>")
 ;; 	    4 2 4 1 5 2 3)))
-;;   `(("news" "重要ニュース" "ja/news/?0+1" ,@default))) ;; 最近の重要ニュース
+;;   `(("news" "重要ニュース" "ja/news/0+2" ,@default))) ;; 最近の重要ニュース
 ;;   )
 
 
