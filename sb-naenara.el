@@ -38,7 +38,7 @@
 (luna-define-class shimbun-naenara
 		   (shimbun-japanese-newspaper shimbun-text) ())
 
-(defvar shimbun-naenara-top-level-domain "www.naenara.com.kp"
+(defvar shimbun-naenara-top-level-domain "naenara.com.kp"
   "Name of the top level domain for the naenara On-line.")
 
 (defvar shimbun-naenara-url
@@ -66,7 +66,7 @@
 	     ;; 5. subject
 	     "\\([^<]+\\)</A>")
 	    4 2 4 1 5 2 3)))
-  `(("news" "重要ニュース" "ja/news/" ,@default))) ;; 最近の重要ニュース
+  `(("news" "重要ニュース" "ja/news/index.php" ,@default))) ;; 最近の重要ニュース
   "Alist of group names, their Japanese translations, index pages,
 regexps and numbers.
 Regexp may contain the \"%s\" token which is replaced with a
@@ -96,7 +96,7 @@ of [0]url, [1,2]serial numbers, [3]year, [4]subject, [5]month, [6]day,
 ;; 	     ;; 5. subject
 ;; 	     "\\([^<]+\\)</A>")
 ;; 	    4 2 4 1 5 2 3)))
-;;   `(("news" "重要ニュース" "ja/news/0+2" ,@default))) ;; 最近の重要ニュース
+;;   `(("news" "重要ニュース" "ja/news/index.php?0+2" ,@default))) ;; 最近の重要ニュース
 ;;   )
 
 
