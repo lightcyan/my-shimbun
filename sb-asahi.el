@@ -82,49 +82,52 @@ Every `.' in NAME will be replaced with `/'."
 	 (no-nl "[^\n<>]+")
 	 (default (list
 		   (concat
-		    "<a" s1 "href=\"/"
+		    "<a" s1 "href=\""
 		    ;; 1. url
-		    "\\(%s/update/"
-		    ;; 2. month
-		    "\\([01][0-9]\\)"
-		    ;; 3. day
-		    "\\([0-3][0-9]\\)"
-		    "/"
-		    ;; 4. serial number
+		    "\\(/articles/"
+		    ;; 2. serial number
 		    "\\([a-z]*[0-9]+\\)"
 		    "\\.html\\)"
-		    "\">" s0
-		    ;; 5. subject
+		    "\"[^>]+>" s0
+		    "\\(?:<img" s1 "[^>]+>\\)?" s0
+		    "\\(?:</?span[^>]*>\\)?"
+		    ;; 3. subject
 		    "\\(" no-nl "\\)"
-		    s0 "\\(?:</?span[^>]*>\\)?"
-		    s0 "\\(?:([01]?[0-9]/[0-3]?[0-9])\\)"
-		    s0 "\\(?:</?span[^>]*>\\)+"
+		    s0 "\\(?:<span[^>]*>\\)"
+		    ;; 4. month
+		    "(\\([01]?[0-9]\\)/"
+		    ;; 5. date
+		    "\\([0-3]?[0-9]\\))"
+		    s0 "\\(?:</span[^>]*>\\)+"
+		    s0 "\\(?:<span[^>]*>\\)?"
 		    s0 "\\(?:<img" s1 "[^>]+>\\)?"
-		    s0 "\\(?:</?span[^>]*>\\)+"
-		    s0 "\\(?:<!--dif[0-9]+-->\\)?" s0 "</a>")
-		   1 4 nil 5 nil 2 3))
+		    s0 "\\(?:</span[^>]*>\\)?"
+		    s0 "</a>")
+		   1 2 nil 3 nil 4 5))
 	 (default2 (shimbun-asahi-make-regexp "%s"))
 	 (book (list
 		(concat
-		 "<a" s1 "href=\"/"
+		 "<a" s1 "href=\""
 		 ;; 1. url
-		 "\\(%s/"
+		 "\\(/articles/"
 		 ;; 2. serial number
-		 "\\([a-z]*"
-		 ;; 3. year
-		 "\\(20[0-9][0-9]\\)"
-		 ;; 4. month
-		 "\\([01][0-9]\\)"
-		 ;; 5. day
-		 "\\([0-3][0-9]\\)"
-		 "[0-9]+\\)"
+		 "\\([a-z]*[0-9]+\\)"
 		 "\\.html\\)"
-		 "\"" s0 ">" s0
-		 ;; 6. subject
+		 "\"[^>]+>" s0
+		 "\\(?:<img" s1 "[^>]+>\\)?" s0
+		 "\\(?:</?span[^>]*>\\)?"
+		 ;; 5->3. subject
 		 "\\(" no-nl "\\)"
-		 s0 "\\(?:<!--dif[0-9]+-->\\)?"
+		 s0 "\\(?:<span[^>]*>\\)"
+		 ;; 4. month
+		 "(\\([01]?[0-9]\\)/"
+		 ;; 5. date
+		 "\\([0-3]?[0-9]\\))"
+		 s0 "\\(?:</span[^>]*>\\)+"
+		 s0 "\\(?:<span[^>]*>\\)?"
 		 s0 "\\(?:<img" s1 "[^>]+>\\)?"
-		 s0 "\\(?:<!--dif[0-9]+-->\\)?" s0 "</a>" s0 "</dt>")
+		 s0 "\\(?:</span[^>]*>\\)?"
+		 s0 "</a>")
 		1 2 nil 6 3 4 5))
 	 (edu (shimbun-asahi-make-regexp "edu.news"))
 	 (international (list
@@ -203,7 +206,7 @@ Every `.' in NAME will be replaced with `/'."
 	 ;; 6. subject
 	 "\\(" no-nl "\\)")
        1 2 nil 6 3 4 5)
-      ("business" "ビジネス" "%s/list/" ,@default)
+      ("business" "ビジネス" "%s/" ,@default)
       ("car" "愛車" "%s/news/" ,@(shimbun-asahi-make-regexp "car.news"))
       ("culture" "文化・芸能" "%s/list.html"
        ,(concat "<a" s1 "href=\"/"
@@ -257,7 +260,7 @@ Every `.' in NAME will be replaced with `/'."
       ("housing" "住まい" "%s/news/"
        ,@(shimbun-asahi-make-regexp "housing.news"))
       ("igo" "囲碁" "%s/news/" ,@(shimbun-asahi-make-regexp "igo.news"))
-      ("international" "国際" "%s/list/" ,@default)
+      ("international" "国際" "%s/" ,@default)
       ("international.asia" "アジア" "international/asia.html" ,@international)
       ("international.column" "コラム")
       ("international.special" "特集")
@@ -272,8 +275,8 @@ Every `.' in NAME will be replaced with `/'."
       ("komimi" "コミミ口コミ" "%s/list.html" ,@default2)
       ("life" "暮らし" "%s/list.html" ,@default)
       ("life.column" "コラム")
-      ("national" "社会" "%s/list/" ,@default)
-      ("politics" "政治" "%s/list/" ,@default)
+      ("national" "社会" "%s/" ,@default)
+      ("politics" "政治" "%s/" ,@default)
       ("rss" "RSS" "http://www3.asahi.com/rss/index.rdf" ,@rss)
       ("science" "サイエンス" "%s/list.html" ,@default)
       ("shopping" "ショッピング" "%s/news/"
